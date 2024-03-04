@@ -4,14 +4,14 @@ from choice import Choice
 class Player:
     def __init__(self, choice=Choice.ROCK, name='Bot'):
         self.name = name
-        self.choice = choice.value
+        self.choice = choice.value # .value для получения значения из перечисления
 
-    def whoWins(self, p1, p2):
-        if p1.var == p2.var:
+    def whoWins(self, p2): # self передает значения по умолчанию
+        if self.choice == p2.choice:
             return 'НИЧЬЯ!'
-        elif p1.var == 'rock' and p2.var == 'scissors' \
-                or p1.var == 'scissors' and p2.var == 'paper' \
-                or p1.var == 'paper' and p2.var == 'rock':
-            return f'Победил игрок с именем {p1.name}!'
+        elif self.choice == 'rock' and p2.choice == 'scissors' \
+                or self.choice == 'scissors' and p2.choice == 'paper' \
+                or self.choice == 'paper' and p2.choice == 'rock':
+            return f'Победил игрок с именем {self.name}!'
         else:
             return f'Победил игрок с именем {p2.name}!'
