@@ -2,8 +2,8 @@ from player import Player
 from choice import Choice
 
 
-bot = Player()
+bot = Player() # задаются аргументы по умолчанию
 
-alex = Player(Choice.ROCK, 'Alex')
+alex = Player(Choice.SCISSORS, 'Alex') # возможность задать свои аргументы
 
-print(bot.whoWins(bot, alex))
+print(bot.whoWins(alex)) # вместо bot можно писать что угодно
